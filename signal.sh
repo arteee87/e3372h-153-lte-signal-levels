@@ -34,3 +34,4 @@ echo "<prtg>
 <unit>custom</unit>
 <customunit>dB</customunit>
 </result>
+</prtg>"
