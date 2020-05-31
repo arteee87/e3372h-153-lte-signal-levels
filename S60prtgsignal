@@ -4,4 +4,4 @@ mkdir /var/prtg
 mkdir /var/prtg/scriptsxml
 cp /online/opt/etc/signal.sh /var/prtg/scriptsxml/signal.sh
 chmod 755 /var/prtg/scriptsxml/signal.sh
-chmod +x /var/prtg/scriptsxml/signal.sh/online/opt/etc/init.d
+chmod +x /var/prtg/scriptsxml/signal.sh
