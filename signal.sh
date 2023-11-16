@@ -4,10 +4,10 @@ DATA=`curl http://192.168.8.1/api/webserver/SesTokInfo`
 SESSION_ID=`echo "$DATA" | grep "SessionID=" | cut -b 10-147`
 TOKEN=`echo "$DATA" | grep "TokInfo" | cut -b 10-41`
 REQUEST=`curl http://192.168.8.1/api/device/signal -H "Cookie: $SESSION_ID" -H "__RequestVerificationToken: $TOKEN"`
-RSRQ=`echo "$REQUEST" | grep -o -P '(?<=<rsrq>).*(?=dB)'`
-RSRP=`echo "$REQUEST" | grep -o -P '(?<=<rsrp>).*(?=dB)'`
-RSSI=`echo "$REQUEST" | grep -o -P '(?<=<rssi>).*(?=dB)'`
-SINR=`echo "$REQUEST" | grep -o -P '(?<=<sinr>).*(?=dB)'`
+RSRQ=`echo "$REQUEST" | perl -nle'print $& while m{(?<=<rsrq>).*(?=dB)}g'`
+RSRP=`echo "$REQUEST" | perl -nle'print $& while m{(?<=<rsrp>).*(?=dB)}g'`
+RSSI=`echo "$REQUEST" | perl -nle'print $& while m{(?<=<rssi>).*(?=dB)}g'`
+SINR=`echo "$REQUEST" | perl -nle'print $& while m{(?<=<sinr>).*(?=dB)}g'`
 
 echo "<prtg>
 <result>
