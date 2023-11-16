@@ -5,7 +5,8 @@ Requirements:
 1) USB modem to be accessible at 192.168.8.1
 2) Entware-3x installed
 3) opkg install curl
-4) opkg install dropbear (to enable ssh access)
+4) opkg install perl
+5) opkg install dropbear (to enable ssh access)
 
 Installation:
 
